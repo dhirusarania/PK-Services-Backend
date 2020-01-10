@@ -24,6 +24,7 @@ urlpatterns = [
     path('backend/client/' , include('clientlist.api.urls')),
     path('backend/homepage/' , include('homepage.api.urls')),
     path('backend/queries/' , include('Queries.api.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 

@@ -1,3 +1,4 @@
+from django_summernote.admin import SummernoteModelAdmin
 from django.contrib import admin
 from .models import CareerQuery, ContactUs
 
@@ -6,6 +7,7 @@ class CareerQuery_field(admin.ModelAdmin):
     list_display = ('id', 'name', 'email' ,'phone_number', 'address', 'files')
     list_display_links = ('name', 'email' ,'phone_number')
     ordering = ('-id',)
+    # summernote_fields = ('address',)
 
 # Register your models here.
 class ContactUs_field(admin.ModelAdmin):
@@ -17,3 +19,5 @@ class ContactUs_field(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(CareerQuery, CareerQuery_field)
 admin.site.register(ContactUs, ContactUs_field)
+
+
