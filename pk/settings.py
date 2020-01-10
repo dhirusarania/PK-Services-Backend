@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'clientlist',
     'homepage',
     'Queries',
+    'news',
 ]
 
 CORS_ORIGIN_ALLOW_ALL=True
@@ -164,3 +165,14 @@ CUSTOM_MEDIA_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 MEDIA_URL_IMG_FIELD = 'media/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(CUSTOM_MEDIA_DIR, 'media')
+
+
+SUMMERNOTE_CONFIG = {
+    'iframe': True,
+    'summernote': {
+        # As an example, using Summernote Air-mode
+        'airMode': False,
+        'toolbar': ['bold', 'italic', 'underline'],
+    },
+    'disable_attachment': True,
+}
