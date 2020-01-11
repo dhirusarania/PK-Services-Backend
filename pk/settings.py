@@ -45,6 +45,7 @@ DEBUG = env('DEBUG')
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_toolbox',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,6 +60,13 @@ INSTALLED_APPS = [
     'Queries',
     'news',
 ]
+
+ADMIN_TOOLBOX = {
+    'sidebar': {
+        'default': ('admin_toolbox.builders.AppsListBuilder', {}),
+    },
+    'breadcrumbs': 'auto',
+}
 
 CORS_ORIGIN_ALLOW_ALL=True
 

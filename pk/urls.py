@@ -25,7 +25,7 @@ urlpatterns = [
     path('backend/homepage/' , include('homepage.api.urls')),
     path('backend/queries/' , include('Queries.api.urls')),
     path('backend/news/' , include('news.api.urls')),
-    path('summernote/', include('django_summernote.urls')),
+    path('backend/summernote/', include('django_summernote.urls')),
 ]
 
 

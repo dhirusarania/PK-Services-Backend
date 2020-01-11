@@ -13,3 +13,5 @@ class LatestNews_field(SummernoteModelAdmin):
 
 # Register your models here.
 admin.site.register(LatestNews, LatestNews_field)
+from django_summernote.utils import get_attachment_model 
+admin.site.unregister(get_attachment_model())
