@@ -19,18 +19,20 @@ class HomepageSlider(models.Model):
     def __str__(self):
         return str(self.title)
 
-# class HomepageData(models.Model):
-#     class Meta:
-#         verbose_name_plural = "Homepage Data"
+class Testimonial(models.Model):
+    class Meta:
+        verbose_name_plural = "Testimonial"
 
 
-#     key                 = models.TextField(max_length=100, null=True, blank=True)
-#     value               = models.TextField(upload_to = settings.MEDIA_URL_IMG_FIELD)
+    name                 = models.CharField(max_length=50, null=False, blank=False)
+    user_type            = models.CharField(max_length=50, null=False, blank=False, default='Client')
+    image                = models.ImageField(upload_to = settings.MEDIA_URL_IMG_FIELD)
+    testimonial          = models.TextField(blank=False)
 
     
-#     #timestamps
-#     created_date       = models.DateTimeField(auto_now_add=True)
-#     modified_date      = models.DateTimeField(auto_now=True)
+    #timestamps
+    created_date       = models.DateTimeField(auto_now_add=True)
+    modified_date      = models.DateTimeField(auto_now=True)
 
-#     def __str__(self):
-#         return str(self.title)
+    def __str__(self):
+        return str(self.name)
