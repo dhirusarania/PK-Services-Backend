@@ -2,14 +2,14 @@ from django.db import models
 from django.conf import settings
 
 # Create your models here.
-class LatestNews(models.Model):
+class pksercurity(models.Model):
     class Meta:
-        verbose_name_plural = "Latest News"
+        verbose_name_plural = "PK Security Services"
 
 
     title               = models.CharField(max_length=100, null=True, blank=True)
-    image               = models.ImageField(upload_to = settings.MEDIA_URL_IMG_FIELD)
-    body                = models.TextField ( blank=True)
+    content             = models.TextField( null=True, blank=True)
+
     
     #timestamps
     created_date       = models.DateTimeField(auto_now_add=True)
@@ -19,14 +19,14 @@ class LatestNews(models.Model):
         return str(self.title)
 
 # Create your models here.
-class BlogPost(models.Model):
+class pkservices(models.Model):
     class Meta:
-        verbose_name_plural = "Blog Post"
+        verbose_name_plural = "PK Services"
 
 
     title               = models.CharField(max_length=100, null=True, blank=True)
-    image               = models.ImageField(upload_to = settings.MEDIA_URL_IMG_FIELD)
-    body                = models.TextField ( blank=True)
+    content             = models.TextField( null=True, blank=True)
+
     
     #timestamps
     created_date       = models.DateTimeField(auto_now_add=True)

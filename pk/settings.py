@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'homepage',
     'Queries',
     'news',
+    'whatwedo',
+    'career',
 ]
 
 ADMIN_TOOLBOX = {
