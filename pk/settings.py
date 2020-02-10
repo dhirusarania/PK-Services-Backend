@@ -45,7 +45,7 @@ DEBUG = env('DEBUG')
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_toolbox',
+    # 'admin_toolbox',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
