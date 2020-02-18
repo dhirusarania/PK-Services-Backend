@@ -13,4 +13,4 @@
 #     return [response.encode()]
 
 
-from my.wsgi import application
+from pk.wsgi import application
