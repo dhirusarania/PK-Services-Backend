@@ -16,5 +16,5 @@ class getAllBlog(generics.ListAPIView):
 class getSingleBlog(generics.RetrieveAPIView):
 
     lookup_field            = 'pk'
-    serializer_class        = getAllBlogSerializer
-    queryset                = BlogPost.objects.all()
+    serializer_class        = getAllNewsSerializer
+    queryset                = LatestNews.objects.all()
