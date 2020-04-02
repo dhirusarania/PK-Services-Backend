@@ -17,6 +17,9 @@ class career(generics.ListAPIView):
             'title',
             'location',
             'job_type',
+            'experience',
+            'open_positions',
+            'salary_range',
             category_name=F('category__name'),
         )
         return Response(list(department), status=status.HTTP_200_OK)
