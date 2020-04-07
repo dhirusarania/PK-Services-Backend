@@ -27,7 +27,7 @@ class ContactUs(models.Model):
 
     name               = models.CharField(max_length=100, null=True, blank=True)
     email              = models.EmailField(verbose_name='email address', max_length=255, unique=False)
-    subject            = models.CharField( max_length=255, blank=False)
+    subject            = models.CharField( max_length=255, blank=True, null=True)
     message            = models.TextField ( blank=True)
     
     #timestamps
