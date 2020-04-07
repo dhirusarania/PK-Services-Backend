@@ -7,6 +7,7 @@ from django.template.loader import render_to_string
 from rest_framework.response import Response
 from rest_framework import status
 from django.utils.html import strip_tags
+import json
 
 
 class createQuery(generics.CreateAPIView):
@@ -24,7 +25,9 @@ class sendMail(APIView):
 
   def post(self, request, format=None):
 
-        email = request.POST.get('email')
+        email = json.loads(request.body)['email']
+
+        print(email)
 
         msg_html = render_to_string('../templates/email.html')
         owner_msg_html = render_to_string('../templates/email_owner.html', {'email': email})
