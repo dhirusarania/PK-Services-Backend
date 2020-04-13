@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.utils.html import strip_tags
 import json
-
+from django.core.mail import EmailMessage
 
 class createQuery(generics.CreateAPIView):
 
@@ -25,10 +25,11 @@ class sendMail(APIView):
 
   def post(self, request, format=None):
 
+        print("email)")
         email = json.loads(request.body)['email']
 
-        print(email)
 
+        print(email)
         msg_html = render_to_string('../templates/email.html')
         owner_msg_html = render_to_string('../templates/email_owner.html', {'email': email})
 
@@ -36,21 +37,36 @@ class sendMail(APIView):
             'Thank you for getting in touch!',
             strip_tags(msg_html),
             'pawan@pkservices.in',
-            [email , 'tecmeadows.office@gmail.com'],
+            [email, 'tecmeadows.office@gmail.com'],
             fail_silently=False,
             html_message=msg_html
         )
 
+        # print(email)
+
+
+        # email = EmailMessage(
+        #     'subject',
+        #     'message.',
+        #     'pawan@pkservices.in',
+        #     to=[email],
+        #     headers={'mailed-by':  'pkservices.in', 'signed-by':  'pkservices.in'},
+        # )
+
+        # email.send(fail_silently=False)
+
         send_mail(
-            'Thank you for getting in touch!',
+            'You have a new Query.',
             strip_tags(msg_html),
             'pawan@pkservices.in',
-            ['tecmeadows.office@gmail.com', 'pawan@pkservices.in'],
+            ['pawan@pkservices.in', 'dhirusarania@gmail.com'],
             fail_silently=False,
             html_message=owner_msg_html
         )
 
+        print(status)
 
-        ContactUs.objects.create(email = email, subject = 'Footer Query')
+
+        # ContactUs.objects.create(email = email, subject = 'Footer Query')
 
         return Response({}, status=status.HTTP_200_OK)
