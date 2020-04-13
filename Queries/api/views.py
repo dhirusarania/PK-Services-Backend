@@ -28,51 +28,49 @@ class sendMail(APIView):
         response = {}
 
 
-        try:
-            print("email)")
-            email = json.loads(request.body)['email']
+
+        print("email)")
+        email = json.loads(request.body)['email']
 
 
-            print(email)
-            msg_html = render_to_string('../templates/email.html')
-            owner_msg_html = render_to_string('../templates/email_owner.html', {'email': email})
+        print(email)
+        msg_html = render_to_string('../templates/email.html')
+        owner_msg_html = render_to_string('../templates/email_owner.html', {'email': email})
 
-            send_mail(
-                'Thank you for getting in touch!',
-                strip_tags(msg_html),
-                'pawan@pkservices.in',
-                [email, 'tecmeadows.office@gmail.com'],
-                fail_silently=False,
-                html_message=msg_html
-            )
+        # send_mail(
+        #     'Thank you for getting in touch!',
+        #     strip_tags(msg_html),
+        #     'pawan@pkservices.in',
+        #     [email, 'tecmeadows.office@gmail.com'],
+        #     fail_silently=False,
+        #     html_message=msg_html
+        # )
 
-            # print(email)
+        # print(email)
 
 
-            # email = EmailMessage(
-            #     'subject',
-            #     'message.',
-            #     'pawan@pkservices.in',
-            #     to=[email],
-            #     headers={'mailed-by':  'pkservices.in', 'signed-by':  'pkservices.in'},
-            # )
+        email = EmailMessage(
+            'subject',
+            'message.',
+            'pawan@pkservices.in',
+            to=[email],
+            headers={'mailed-by':  'pkservices.in', 'signed-by':  'pkservices.in'},
+        )
 
-            # email.send(fail_silently=False)
+        email.send(fail_silently=False)
 
-            send_mail(
-                'You have a new Query.',
-                strip_tags(msg_html),
-                'pawan@pkservices.in',
-                ['pawan@pkservices.in', 'dhirusarania@gmail.com'],
-                fail_silently=False,
-                html_message=owner_msg_html
-            )
+        # send_mail(
+        #     'You have a new Query.',
+        #     strip_tags(msg_html),
+        #     'pawan@pkservices.in',
+        #     ['pawan@pkservices.in', 'dhirusarania@gmail.com'],
+        #     fail_silently=False,
+        #     html_message=owner_msg_html
+        # )
 
-            response['er11'] = 'succcs'
+        response['er11'] = 'succcs'
 
-            print(status)
-        except Exception as e:
-            response['er'] = e
+        print(status)
             
 
             
