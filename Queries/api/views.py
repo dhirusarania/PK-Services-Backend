@@ -24,6 +24,7 @@ class createContact(generics.CreateAPIView):
 class sendMail(APIView):
 
   def post(self, request, format=None):
+      
 
         print("email)")
         email = json.loads(request.body)['email']
