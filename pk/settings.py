@@ -167,8 +167,8 @@ DEFAULT_FROM_EMAIL=env('DEFAULT_FROM_EMAIL')
 SERVER_EMAIL=env('SERVER_EMAIL')
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static')
+STATIC_URL = '/static_media/'
+STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static_media')
 
 CUSTOM_MEDIA_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
