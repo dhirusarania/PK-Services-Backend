@@ -167,17 +167,14 @@ DEFAULT_FROM_EMAIL=env('DEFAULT_FROM_EMAIL')
 SERVER_EMAIL=env('SERVER_EMAIL')
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_URL = '/static_media/'
-STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'static_media')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 CUSTOM_MEDIA_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 
 MEDIA_URL_IMG_FIELD = 'media/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(CUSTOM_MEDIA_DIR, 'media')
-
-print(STATIC_ROOT)
-print(PROJECT_ROOT)
 
 
 SUMMERNOTE_CONFIG = {
